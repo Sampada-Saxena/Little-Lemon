@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book a Table - Little Lemon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
     <div class="logo-title">
@@ -21,7 +23,13 @@
       </ul>
     </nav>
   </header>
-
+  <section class="booking-hero">
+      <h2>Reserve Your Table</h2>
+      <p>
+        Treat yourself to an unforgettable dining experience. Fill out the form
+        below and we’ll take care of the rest.
+      </p>
+    </section>
   <main class="booking-section">
     <h2>Book a Table</h2>
     <form id="bookingForm">
@@ -32,7 +40,7 @@
       <input type="email" id="email" name="email" required />
 
       <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" required />
+      <input type="tel" id="phone" name="phone" maxlength="10" required />
 
       <label for="date">Date:</label>
       <input type="date" id="date" name="date" required />
@@ -53,4 +61,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
