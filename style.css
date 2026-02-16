@@ -26,7 +26,7 @@ header {
 }
 
 .logo {
-  width: 50px;
+  width: 90px;
   height: auto;
 }
 
@@ -62,28 +62,45 @@ nav a:hover {
   max-width: 1000px;
   border-radius: 12px;
   overflow: hidden;
+  height: 300px; /* fixes consistent banner height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain; /* shows full image without cropping */
+  object-position: center;
   display: block;
+  background-color: #fff6ec; /* subtle background behind transparent edges */
 }
 
 .banner-text {
   position: absolute;
-  top: 10%;
-  left: 5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
 }
 
+
 .banner-text h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
+
+.banner-text p {
+  font-size: 15px;
+}
+
 
 .features {
   display: flex;
@@ -97,7 +114,7 @@ nav a:hover {
 .card {
   background: #fff6ec;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
   padding: 20px;
   text-align: center;
@@ -136,4 +153,105 @@ footer {
   text-align: right;
   font-size: 14px;
   color: #666;
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 200px;
+  }
+
+  .banner-text h2 {
+    font-size: 20px;
+  }
+
+  .banner-text p {
+    font-size: 13px;
+  }
+}
+
+.booking-hero{
+  text-align: center;
+  margin: 36px 10px;
+  background: #fff7ed;
+  padding: 30px 18px;
+  border-radius: 10px;
+  color: #333;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.booking-hero h2 {
+  font-size: 28px;
+  color: #495e57;
+  margin-bottom: 8px;
+}
+
+.booking-hero p {
+  font-size: 15px;
+  color: #555;
+}
+
+.booking-section {
+  max-width: 730px;
+  margin: 22px auto 60px;
+  padding: 28px;
+  background: #fff7ed;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  animation: fadeInUp .9s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.booking-section form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+}
+
+.booking-section label {
+  display: block;
+  font-weight: 600;
+  color: #495e57;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+
+.booking-section input,
+.booking-section textarea,
+.booking-section select {
+  width: 100%;
+  padding: 12px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color .18s, box-shadow .18s;
+  background: #fff;
+  color: #222;
+}
+
+.booking-section input:focus,
+.booking-section textarea:focus,
+.booking-section select:focus {
+  border-color: #495e57;
+  box-shadow: 0 4px 12px rgba(73,94,87,0.06);
+  outline: none;
+}
+
+.booking-section button {
+  grid-column: 1 / -1;
+  padding: 12px 14px;
+  background: #495e57;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background .2s, transform .06s;
+}
+
+.booking-section button:hover { 
+  background: #f4ce14; color: #222; transform: translateY(-1px);
 }
